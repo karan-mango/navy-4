@@ -1,0 +1,16 @@
+.box1 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+
+
+
+  @keyframes moveBackground {
+    0% {
+      transform: rotate(180deg) translateX(-100%); /* Start off-screen on the left */
+    }
+    100% {
+      transform: rotate(180deg) translateX(100vw); /* Move to the right edge of the viewport */
+    }
+  }

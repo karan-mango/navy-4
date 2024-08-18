@@ -1,0 +1,71 @@
+.footer {
+  overflow: hidden;
+}
+
+.submarine {
+  animation: moveAndBob 10s linear infinite;
+}
+
+@keyframes moveAndBob {
+  0% {
+    transform: translateX(100vw) translateY(0) rotate(0deg); /* Start from right (off-screen) */
+  }
+  25% {
+    transform: translateX(50vw) translateY(-30px) rotate(0deg); /* Mid-way right and up */
+  }
+  50% {
+    transform: translateX(0) translateY(0) rotate(0deg); /* Center screen */
+  }
+  75% {
+    transform: translateX(-50vw) translateY(-30px) rotate(0deg); /* Mid-way left and up */
+  }
+  100% {
+    transform: translateX(-100vw) translateY(0) rotate(0deg); /* Move to left (off-screen) */
+  }
+}
+.banner {
+  position: relative;
+  width: 100vw;
+  height: 250px;
+  overflow: hidden; /* Ensures the blur doesn't overflow */
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -180px;
+  width: 200vw;
+  height: 100%;
+  background-image: url('../../public/path7-1.svg');
+  background-size: 1600px;
+  background-repeat: no-repeat;
+  background-position: 00px center;
+  filter: blur(2px); /* Adjust the blur level */
+  opacity: 0.8; /* Adjust the opacity */
+  z-index: -1; /* Place it behind the content */
+}
+
+.banner h1 {
+  position: relative; /* Ensure the heading is above the background */
+  z-index: 1;
+  top: 50px;
+  /* background: #000; */
+
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  gap: 16px; /* Space between columns */
+}
+
+.full-width {
+  grid-column: span 2; /* Makes the element span both columns */
+}
+
+.submit-button {
+  grid-column: span 2; /* Centers the submit button */
+  display: flex;
+  justify-content: center;
+}
